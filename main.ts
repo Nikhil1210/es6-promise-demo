@@ -1,12 +1,13 @@
 import {SyncSquare, AsyncSquare, AsyncErrorSquare} from "./src/simplePromise";
-import {GetPostsUsingCallback, Postcallback} from "./src/Introduction/callbackhell";
-import {GetPostsUsingPromise} from "./src/Introduction/promise-against-callback";
+import {GetPostsUsingCallback, Postcallback} from "./src/callbackhell";
+import {GetPostsUsingPromise} from "./src/promise-against-callback";
 import {ErrorPromise} from "./src/Promise-error-handling";
+import { FetchExampleGET, FetchExamplePOST} from "./src/fetch-example";
 /**
- * INtroduction to call back hell
+ * Introduction to call back hell
  */
- GetPostsUsingCallback(Postcallback);
- GetPostsUsingPromise();
+//  GetPostsUsingCallback(Postcallback);
+//  GetPostsUsingPromise();
 
 /**
  * Siple promise example
@@ -30,3 +31,8 @@ import {ErrorPromise} from "./src/Promise-error-handling";
 // .catch((err:any) => console.log(`error inside second promise: ${err}`))
 // .then((res:any) => console.log('then for AsyncSquare()'))
 // .catch((err:any) => console.log(`catch for AsyncSquare(): ${err}`));
+/**
+ * Fetch api example
+ */
+//FetchExampleGET();
+FetchExamplePOST();

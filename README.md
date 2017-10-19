@@ -19,5 +19,5 @@ npm start
 # Description
 
 ```
- [blog](https://wordpress.com/post/technologymadefunblog.wordpress.com)
+ [blog](https://wordpress.com/post/technologymadefunblog.wordpress.com/)
 ```
