@@ -1,0 +1,39 @@
+{
+    "name": "rxjs-demo",
+    "version": "1.0.0",
+    "description": "demosntration of rxjs features",
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack-dev-server --inline --watch",
+        "postinstall": "typings install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Nikhil1210/rxjs-demo.git"
+    },
+    "keywords": [
+        "rxjs",
+        "reactive.io",
+        "observables"
+    ],
+    "author": "nikhil.malhotra1210@gmail.com",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Nikhil1210/rxjs-demo/issues"
+    },
+    "homepage": "https://github.com/Nikhil1210/rxjs-demo#readme",
+    "dependencies": {
+        "rxjs": "^5.4.3"
+    },
+    "devDependencies": {
+        "@types/node": "^8.0.44",
+        "fs": "0.0.1-security",
+        "node": "^8.3.0",
+        "nodemon": "^1.12.1",
+        "ts-loader": "^2.3.7",
+        "typescript": "^2.5.3",
+        "typings": "^2.1.1",
+        "webpack": "^3.7.1",
+        "webpack-dev-server": "^2.9.1"
+    }
+}
