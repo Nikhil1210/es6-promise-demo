@@ -5,8 +5,8 @@ import {ErrorPromise} from "./src/Promise-error-handling";
 /**
  * INtroduction to call back hell
  */
-// GetPostsUsingCallback(Postcallback);
-// GetPostsUsingPromise();
+ GetPostsUsingCallback(Postcallback);
+ GetPostsUsingPromise();
 
 /**
  * Siple promise example
@@ -23,10 +23,10 @@ import {ErrorPromise} from "./src/Promise-error-handling";
 //     .then((res:number) => {console.log(`async call: ${res}`)}).catch((err:any) => console.error(`Inside catch: ${err}`)) ;
 
 // Error handling in promise
-ErrorPromise()
-.then((res: any) => console.log("then for ErrorPromise()"))
-.catch((err:any) => console.log(`catch for ErrorPromise(): ${err}`))
-.then(((res:any) => AsyncSquare(3)))
-.catch((err:any) => console.log(`error inside second promise: ${err}`))
-.then((res:any) => console.log('then for AsyncSquare()'))
-.catch((err:any) => console.log(`catch for AsyncSquare(): ${err}`));
+// ErrorPromise()
+// .then((res: any) => console.log("then for ErrorPromise()"))
+// .catch((err:any) => console.log(`catch for ErrorPromise(): ${err}`))
+// .then(((res:any) => AsyncSquare(3)))
+// .catch((err:any) => console.log(`error inside second promise: ${err}`))
+// .then((res:any) => console.log('then for AsyncSquare()'))
+// .catch((err:any) => console.log(`catch for AsyncSquare(): ${err}`));

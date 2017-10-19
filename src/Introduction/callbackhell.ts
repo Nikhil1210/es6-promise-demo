@@ -12,13 +12,13 @@
   export function GetPostsUsingCallback(callback){
     const baseUrl= `https://jsonplaceholder.typicode.com/posts`;
     // fetch all posts
-     httprequest(`${baseUrl}`, (res: any, err: any) =>{
+     httpCallbackRequest(`${baseUrl}`, (res: any, err: any) =>{
        if(err){
           callback(err);
        }else{
          // fetch comments for the first post where userId=3
         const post = JSON.parse(res).filter(x=> x.userId=3);
-        httprequest(`${baseUrl}/${post[0].id}/comments`, (resComments: any, err: any) =>{
+        httpCallbackRequest(`${baseUrl}/${post[0].id}/comments`, (resComments: any, err: any) =>{
           if(err){
              callback(err);
           }else{
@@ -27,15 +27,18 @@
         });
      }});
   }
-function httprequest(url:string, callback:any) {
+function httpCallbackRequest(url:string, callback:any) {
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status === 200) {
-      callback(this.responseText);
-    }else if(this.readyState == 4 && this.status !== 200){
-      callback(null,`url - ${url}`);
+  xhttp.open("GET", url);
+  xhttp.onload = function() {
+    // even called on failure or not found
+    if (xhttp.status === 200) {
+      callback(xhttp.response);
     }
   };
-  xhttp.open("GET", url, true);
+  // request error
+  xhttp.onerror= function(){
+     callback(null,`url - ${url}`);
+  }
   xhttp.send();
 }
